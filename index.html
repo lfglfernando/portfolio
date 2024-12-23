@@ -4,18 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Responsive Personal Portfolio Website Design | Fernando</title>
+    <meta property="og:title" content="Portfolio - Web Frontend Development">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lfglfernando.github.io/wdd231/images/profile.PNG">
+    <meta property="og:url" content="https://lfglfernando.github.io/wdd231/">
+    <meta property="og:description" content="WDD 231 - Web Frontend Development 1">
+	<meta name="description" content="WDD 231 - Web Frontend Development 1">
+    <meta name="author" content="Luis Fernando Galvez Lopez">
+    <title>Personal Portfolio Website | Fernando</title>
+    <!-- favicon -->
+    <link rel="icon" href="ferwebdev.ico">
+
+	<!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
      <!-- box icons -->
      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- custom css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles/style.css">
+	<!-- custom js -->
+    <script src="scripts/script.js" defer></script>
+
 </head>
 <body>
 
     <!-- header design -->
-    <header class="header">
+    <header>
         <a href="#" class="logo">Portfolio</a>
 
         <i class='bx bx-menu' id="menu-icon"></i>
@@ -23,11 +40,12 @@
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
-            <a href="#services">Services</a>
+            <a href="#services">Certificates</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
+	<main></main>
 
     <!-- home section design -->
     <section class="home" id="home">
@@ -49,18 +67,18 @@
                 <a href="https://www.instagram.com/lfglfernando/" target="_blank"><i class='bx bxl-instagram-alt' ></i></a>
                 <a href="https://www.linkedin.com/in/lfernandog/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
             </div>
-            <a href="images/Luis-Fernando-Galvez-Lopez-2.pdf" download="Luis-Fernando-Galvez-Lopez-CV" class="btn">Download CV</a>
+            <a href="images/Luis-Galvez-Resume.pdf" download="Luis-Galvez-Resume" class="btn">Download CV</a>
         </div>
 
         <div class="home-img">
-            <img src="images/profile.PNG" alt="">
+            <img src="images/profile.PNG" alt="profile" loading="lazy">
         </div>
     </section>
 
     <!-- about section design -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="images/profile.PNG" alt="">
+            <img src="images/profile.PNG" alt="about" loading="lazy">
         </div>
 
         <div class="about-content">
@@ -74,29 +92,27 @@
 
     <!--  services section design -->
     <section class="services" id="services">
-        <h2 class="heading">Our <span>Services</span></h2>
+        <h2 class="heading">Web and Computer Programming <span>Certificate</span></h2>
+
+		<div class="filter-classes">
+			<a href="#" class="btn-classes">All</a>
+			<a href="#" class="btn-classes">CSE</a>
+			<a href="#" class="btn-classes">WDD</a>
+		</div>
+		
         <div class="services-container">
-            <div class="services-box">
-                <i class="bx bx-code-alt"></i>
-                <h3>Web Development</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore consectetur necessitatibus, maxime cupiditate, dolorum illo quas odio sapiente illum alias, aut voluptas animi. Ipsa nostrum ad eligendi esse explicabo modi.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
+		<!-- Here all tha cards will be inserted -->
 
-            <div class="services-box">
-                <i class="bx bx-code-alt"></i>
-                <h3>Web Development</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore consectetur necessitatibus, maxime cupiditate, dolorum illo quas odio sapiente illum alias, aut voluptas animi. Ipsa nostrum ad eligendi esse explicabo modi.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-
-            <div class="services-box">
-                <i class="bx bx-code-alt"></i>
-                <h3>Web Development</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore consectetur necessitatibus, maxime cupiditate, dolorum illo quas odio sapiente illum alias, aut voluptas animi. Ipsa nostrum ad eligendi esse explicabo modi.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
         </div>
+        
+        <dialog class="course-details">
+
+        </dialog>
+
+		<div class="total-credits">
+			<!-- Here it will show the total credits -->
+			<h2>Total Credits: <span id="creditCount"></span></h2>
+		</div>
     </section>
 
     <!-- portfolio section desing -->
@@ -105,16 +121,25 @@
 
         <div class="portfolio-container">
             <div class="portfolio-box">
-                <img src="images/marriage-proposal.png" alt="marriage-proposal"></img>
+                <img src="images/marriage-proposal.png" alt="marriage-proposal" loading="lazy">
                 <div class="portfolio-layer">
                     <h4>Marriage Proposal To My Wife</h4>
-                    <p>I made this website to propose to my wife, simulating a Netflix login. When selecting a movie, a video will play showing the story of our relationship. I created it using HTML, CSS, and JavaScript.</p>
+                    <p>I made this website to propose to my wife, simulating a Netflix login.</p>
                     <a href="https://lfglfernando.github.io/wdd130/proposal/netflix.html" target="_blank"><i class="bx bx-link-external"></i></a>
                 </div>
             </div>
 
             <div class="portfolio-box">
-                <img src="images/coming-soon.avif" alt="coming-soon"></img>
+                <img src="images/chamber-of-commerce.png" alt="coming-soon" loading="lazy">
+                <div class="portfolio-layer">
+                    <h4>Chamber of Commerce</h4>
+                    <p>This is a project I made for my frontend web development class.</p>
+                    <a href="https://lfglfernando.github.io/wdd231/chamber/directory.html" target="_blank"><i class="bx bx-link-external"></i></a>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="images/coming-soon.avif" alt="coming-soon" loading="lazy">
                 <div class="portfolio-layer">
                     <h4>Web Design</h4>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, natus.</p>
@@ -123,25 +148,16 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="images/coming-soon.avif" alt="coming-soon"></img>
-                <div class="portfolio-layer">
-                    <h4>Web Design</h4>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, natus.</p>
-                    <a href="#" target="_blank"><i class="bx bx-link-external"></i></a>
-                </div>
-            </div>
-
-            <div class="portfolio-box">
-                <img src="images/find-your-temple.png" alt="find-your-temple"></img>
+                <img src="images/find-your-temple.png" alt="find-your-temple" loading="lazy">
                 <div class="portfolio-layer">
                     <h4>Find Your Temple</h4>
-                    <p>In this project, I downloaded a JSON file with different temple locations and their characteristics, and I displayed it dynamically on this website. You can also filter the search by size, city, or name using HTML, CSS, and JavaScript.</p>
+                    <p>In this project, I downloaded a JSON file with different temple locations and their characteristics, and I displayed it dynamically on this website.</p>
                     <a href="https://lfglfernando.github.io/wdd131/filtered-temples.html" target="_blank"><i class="bx bx-link-external"></i></a>
                 </div>
             </div>
 
             <div class="portfolio-box">
-                <img src="images/coming-soon.avif" alt="coming-soon"></img>
+                <img src="images/coming-soon.avif" alt="coming-soon" loading="lazy">
                 <div class="portfolio-layer">
                     <h4>Web Design</h4>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, natus.</p>
@@ -150,7 +166,7 @@
             </div>
 
             <div class="portfolio-box">
-                <img src="images/bomtop10.png" alt="bom-top-10"></img>
+                <img src="images/bomtop10.png" alt="bom-top-10" loading="lazy">
                 <div class="portfolio-layer">
                     <h4>Top 10 Scriptures</h4>
                     <p>In this project, I used JavaScript to save your favorite scriptures, though it could also be used for a to-do list. You can edit, delete, or add more options.</p>
@@ -173,7 +189,7 @@
                 <input type="number" placeholder="Phone Number">
                 <input type="text" placeholder="Email Subject">
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
             <input type="submit" value="Send Message" class="btn"> 
 
         </form>
@@ -182,9 +198,10 @@
      <!-- footer design -->
      <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2024 by Ferdev | All Rights Reserved.</p>
+			<p> Luis Fernando Galvez, <i class="fas fa-flower"></i> Mexico</p>
+        	<p id="lastModified"></p>
+            <p>Copyright &copy; <span id="currentyear"></span> All Rights Reserved.</p>
         </div>
-
         <div class="footer-iconTop">
             <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
         </div>
@@ -195,9 +212,6 @@
 
      <!-- typed js  -->
      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-    <!-- custom js -->
-    <script src="js/script.js"></script>
 
 </body>
 </html>
