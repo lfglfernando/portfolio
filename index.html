@@ -1,112 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:title" content="Portfolio - Web Frontend Development">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://lfglfernando.github.io/wdd231/images/profile.PNG">
-    <meta property="og:url" content="https://lfglfernando.github.io/wdd231/">
-    <meta property="og:description" content="WDD 231 - Web Frontend Development 1">
-	<meta name="description" content="WDD 231 - Web Frontend Development 1">
-    <meta name="author" content="Luis Fernando Galvez Lopez">
-    <title>Personal Portfolio Website | Fernando</title>
-    <!-- favicon -->
-    <link rel="icon" href="ferwebdev.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta property="og:title" content="Portfolio - Web Frontend Development" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://lfglfernando.github.io/wdd231/images/profile.PNG" />
+  <meta property="og:url" content="https://lfglfernando.github.io/wdd231/" />
+  <meta property="og:description" content="WDD 231 - Web Frontend Development 1" />
+  <meta name="description" content="WDD 231 - Web Frontend Development 1" />
+  <meta name="author" content="Luis Fernando Galvez Lopez" />
+  <title>Personal Portfolio Website | Fernando</title>
+  <link rel="icon" href="ferwebdev.ico" />
 
-	<!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-     <!-- box icons -->
-     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- box icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-    <!-- custom css -->
-    <link rel="stylesheet" href="styles/style.css">
-	<!-- custom js -->
-    <script src="scripts/script.js" defer></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="styles/style.css" />
 
+  <!-- custom js -->
+  <script src="scripts/script.js" defer></script>
 </head>
 <body>
+  <!-- header design -->
+  <header>
+    <a href="#" class="logo">Fernando's Portfolio</a>
+    <i class="bx bx-menu" id="menu-icon"></i>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Certificates & Diplomas</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <!-- header design -->
-    <header>
-        <a href="#" class="logo">Portfolio</a>
+  <main></main>
 
-        <i class='bx bx-menu' id="menu-icon"></i>
+  <!-- home section design -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3>Hello, It's Me</h3>
+      <h1>Fernando Galvez</h1>
+      <h3>And I'm a <span class="multiple-text"></span></h3>
+      <p>
+        I am currently studying Software Development at BYU–Idaho. My passion for programming began after returning
+        home from my mission, when I completed an intensive programming course that sparked my interest in building
+        software solutions. Soon after, I began working at Coppel as a Junior Full-Stack Developer, where I gained
+        hands-on experience with multiple programming languages, including JavaScript, Python, and C++. Later, I moved
+        to the United States and joined CRMB as an Implementation Specialist, where I collaborated with the software
+        engineering team to address customer feedback, fix bugs, and implement new features in our application. Most
+        recently, I worked as a WordPress Developer for a manufacturing company called ShapePoint, where I was
+        responsible for designing and developing their company website.
+      </p>
+      <div class="social-media">
+        <a href="https://www.facebook.com/profile.php?id=100001590254103" target="_blank"><i class="bx bxl-facebook-circle"></i></a>
+        <a href="https://x.com/lfglfernandog" target="_blank"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.instagram.com/lfglfernando/" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
+        <a href="https://www.linkedin.com/in/lfernandog/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <a href="images/Fernando Galvez Resume .pdf" download="Luis-Galvez-Resume" class="btn">Download CV</a>
+    </div>
 
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Certificates</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-	<main></main>
+    <div class="home-img">
+      <img src="images/fernando-galvez-headshoot.jpg" alt="profile" loading="lazy" />
+    </div>
+  </section>
 
-    <!-- home section design -->
-    <section class="home" id="home">
-        <div class="home-content">
-            <h3>Hello, It's Me</h3>
-            <h1>Fernando Galvez</h1>
-            <h3>And I'm a <span class="multiple-text"></span></h3>
-            <p>My Experience, I Programmed personalized apps and webpages for over 20 businesses ensuring quality content, design, and service.
-                Headed the training and implementation of software among 7 employees pertaining to team.
-                Taught each of 20 business owners how to integrate software programs into business processes
-                and adjust business models accordingly.
-                Provided 24 hour a day attention to customers to answer questions pertaining to software and
-                gave prompt support to resolve any bugs.
-                Led implementation efforts of 4 employee-team checking in weekly according to systemic
-                updates.</p>
-            <div class="social-media">
-                <a href="https://www.facebook.com/profile.php?id=100001590254103" target="_blank"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://x.com/lfglfernandog" target="_blank"><i class='bx bxl-twitter'></i></a>
-                <a href="https://www.instagram.com/lfglfernando/" target="_blank"><i class='bx bxl-instagram-alt' ></i></a>
-                <a href="https://www.linkedin.com/in/lfernandog/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
-            </div>
-            <a href="images/Luis-Galvez-Resume.pdf" download="Luis-Galvez-Resume" class="btn">Download CV</a>
+  <!-- about section design -->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="images/Fernando-Galvez-Family.png" alt="about" loading="lazy" />
+    </div>
+
+    <div class="about-content">
+      <h2 class="heading">About <span>Me</span></h2>
+      <h3>Software Developer!</h3>
+      <p>
+        I am currently studying Software Development at BYU–Idaho. My passion for programming began after returning
+        home from my mission, when I completed an intensive programming course that sparked my interest in building
+        software solutions. Soon after, I began working at Coppel as a Junior Full-Stack Developer, where I gained
+        hands-on experience with multiple programming languages, including JavaScript, Python, and C++. Later, I moved
+        to the United States and joined CRMB as an Implementation Specialist, where I collaborated with the software
+        engineering team to address customer feedback, fix bugs, and implement new features in our application. Most
+        recently, I worked as a WordPress Developer for a manufacturing company called ShapePoint, where I was
+        responsible for designing and developing their company website.
+      </p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </section>
+
+  <!--  WCP section -->
+  <section class="services" id="services">
+    <h2 class="heading">Web and Computer Programming <span>Certificate</span></h2>
+
+    <div class="filter-classes">
+      <a href="#" class="btn-classes">All</a>
+      <a href="#" class="btn-classes">CSE</a>
+      <a href="#" class="btn-classes">WDD</a>
+    </div>
+
+    <div class="services-container"><!-- cards injected by JS --></div>
+
+    <dialog class="course-details"></dialog>
+
+    <!-- ahora el total va solo -->
+    <div class="total-credits">
+      <h2>Total Credits: <span id="creditCount"></span></h2>
+    </div>
+
+    <!-- y el certificado va en su propia línea -->
+    <div class="certificate-wrap">
+      <img src="images/Fernando-Galvez-WebAndComputerProgramming-eCertificate.png" alt="Web & Computer Programming eCertificate" />
+    </div>
+  </section>
+
+  <!-- Web Development Certificate -->
+  <section class="services" id="wd-cert">
+    <h2 class="heading">Web Development<span> Certificate</span></h2>
+
+    <div class="filter-classes wd-filter">
+      <a href="#" class="btn-classes">All</a>
+      <a href="#" class="btn-classes">CSE</a>
+      <a href="#" class="btn-classes">WDD</a>
+    </div>
+
+    <div class="services-container wd-container"></div>
+
+    <dialog class="course-details wd-details"></dialog>
+
+    <div class="total-credits">
+      <h2>Total Credits: <span id="wdCreditCount"></span></h2>
+    </div>
+
+    <div class="certificate-wrap">
+      <img src="images/Fernando-Galvez-Web-Development-Certificate.png" alt="Web Development Certificate" />
+    </div>
+  </section>
+
+  <!-- Associate of Applied Science (Software Development) -->
+  <section class="services" id="aas">
+    <h2 class="heading">Associate of Applied Science <span>(Software Development)</span></h2>
+
+    <div class="filter-classes aas-filter">
+      <a href="#" class="btn-classes">All</a>
+      <a href="#" class="btn-classes">CSE</a>
+      <a href="#" class="btn-classes">WDD</a>
+      <a href="#" class="btn-classes">GEN</a>
+    </div>
+
+    <div class="services-container aas-container"></div>
+
+    <dialog class="course-details aas-details"></dialog>
+
+    <div class="total-credits">
+      <h2>Total Credits Counted: <span id="aasCreditCount"></span></h2>
+    </div>
+
+    <div class="certificate-wrap">
+      <img src="images/Fernando-Galvez-Associate-of-Applied-Science-in-Software-Development-eDiploma.png" alt="Associate of Applied Science Diploma" />
+    </div>
+  </section>
+
+  <!-- portfolio -->
+  <section class="portfolio" id="portfolio">
+    <h2 class="heading">Latest <span>Project</span></h2>
+
+    <div class="portfolio-container">
+      <div class="portfolio-box">
+        <img src="images/shapepoint-website.png" alt="coming-soon" loading="lazy" />
+        <div class="portfolio-layer">
+          <h4>ShapePoint Website</h4>
+          <p>In this project, I used WordPress, which already came with a pre-built template that I had to modify using JavaScript and CSS.</p>
+          <a href="https://www.shapepoint.com/" target="_blank"><i class="bx bx-link-external"></i></a>
         </div>
+      </div>
 
-        <div class="home-img">
-            <img src="images/profile.PNG" alt="profile" loading="lazy">
+      <div class="portfolio-box">
+        <img src="images/coming-soon.avif" alt="coming-soon" loading="lazy" />
+        <div class="portfolio-layer">
+          <h4>Web Design</h4>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, natus.</p>
+          <a href="#" target="_blank"><i class="bx bx-link-external"></i></a>
         </div>
-    </section>
+      </div>
 
-    <!-- about section design -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="images/profile.PNG" alt="about" loading="lazy">
+      <div class="portfolio-box">
+        <img src="images/real-estate-website.png" alt="real-estate-website" loading="lazy" />
+        <div class="portfolio-layer">
+          <h4>Real Estate Website</h4>
+          <p>I made this website using HTML, SCSS and JavaScript, PHP and Databases</p>
+          <a href="https://lfglfernando.github.io/real-state-website/" target="_blank"><i class="bx bx-link-external"></i></a>
         </div>
+      </div>
 
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Software Developer!</h3>
-            <p>My interest in programming began a few years ago when I took an intensive course in full-stack developing. Upon my completion of the course, I started my first job as a developer at the company Afore-Coppel where I was able to gain many coding skills from real-world experiences. One of my biggest aspirations is to work for a company like Microsoft or Google - leaders of technological innovation. Following this dream, I decided to move to the United States where I began working for a local startup that enables small to medium sized businesses to systemize their processes.
-                Willing to relocate: Anywhere</p>
-            <a href="#" class="btn">Read More</a>
+      <div class="portfolio-box">
+        <img src="images/marriage-proposal.png" alt="marriage-proposal" loading="lazy" />
+        <div class="portfolio-layer">
+          <h4>Marriage Proposal To My Wife</h4>
+          <p>I made this website to propose to my wife, simulating a Netflix login.</p>
+          <a href="https://lfglfernando.github.io/wdd130/proposal/netflix.html" target="_blank"><i class="bx bx-link-external"></i></a>
         </div>
-    </section>
+      </div>
 
-    <!--  services section design -->
-    <section class="services" id="services">
-        <h2 class="heading">Web and Computer Programming <span>Certificate</span></h2>
-
-		<div class="filter-classes">
-			<a href="#" class="btn-classes">All</a>
-			<a href="#" class="btn-classes">CSE</a>
-			<a href="#" class="btn-classes">WDD</a>
-		</div>
-		
-        <div class="services-container">
-		<!-- Here all tha cards will be inserted -->
-
+      <div class="portfolio-box">
+        <img src="images/e-commerce.png" alt="e-commerce" loading="lazy" />
+        <div class="portfolio-layer">
+          <h4>E-Commerce</h4>
+          <p>I made this E-Commerce, Using HTML and CSS and JavaScript</p>
+          <a href="https://lfglfernando.github.io/e-commerce/" target="_blank"><i class="bx bx-link-external"></i></a>
         </div>
-        
-        <dialog class="course-details">
+      </div>
 
+<<<<<<< HEAD
         </dialog>
 
 		<div class="total-credits">
@@ -195,45 +308,68 @@ It allows users to create, edit, and delete invoices, with server-side form vali
                     <a href="https://lfglfernando.github.io/wdd131/week05/bom.html" target="_blank"><i class="bx bx-link-external"></i></a>
                 </div>
             </div>
+=======
+      <div class="portfolio-box">
+        <img src="images/chamber-of-commerce.png" alt="coming-soon" loading="lazy" />
+        <div class="portfolio-layer">
+          <h4>Chamber of Commerce</h4>
+          <p>This is a project I made for my frontend web development class.</p>
+          <a href="https://lfglfernando.github.io/wdd231/chamber/directory.html" target="_blank"><i class="bx bx-link-external"></i></a>
+>>>>>>> 231d300 (improvements)
         </div>
-    </section>
+      </div>
 
-    <!-- contanct section design -->
-    <section class="contact" id="contact">
-        <h2 class="heading"> Contact <span>Me!</span></h2>
-
-        <form action="#">
-            <div class="input-box">
-                <input type="text" placeholder="Full Name">
-                <input type="email" placeholder="Email Address">
-            </div>
-            <div class="input-box">
-                <input type="number" placeholder="Phone Number">
-                <input type="text" placeholder="Email Subject">
-            </div>
-            <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
-            <input type="submit" value="Send Message" class="btn"> 
-
-        </form>
-    </section>
-
-     <!-- footer design -->
-     <footer class="footer">
-        <div class="footer-text">
-			<p> Luis Fernando Galvez, <i class="fas fa-flower"></i> Mexico</p>
-        	<p id="lastModified"></p>
-            <p>Copyright &copy; <span id="currentyear"></span> All Rights Reserved.</p>
+      <div class="portfolio-box">
+        <img src="images/find-your-temple.png" alt="find-your-temple" loading="lazy" />
+        <div class="portfolio-layer">
+          <h4>Find Your Temple</h4>
+          <p>In this project, I downloaded a JSON file with different temple locations and their characteristics, and I displayed it dynamically on this website.</p>
+          <a href="https://lfglfernando.github.io/wdd131/filtered-temples.html" target="_blank"><i class="bx bx-link-external"></i></a>
         </div>
-        <div class="footer-iconTop">
-            <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+
+      <div class="portfolio-box">
+        <img src="images/bomtop10.png" alt="bom-top-10" loading="lazy" />
+        <div class="portfolio-layer">
+          <h4>Top 10 Scriptures</h4>
+          <p>In this project, I used JavaScript to save your favorite scriptures, though it could also be used for a to-do list. You can edit, delete, or add more options.</p>
+          <a href="https://lfglfernando.github.io/wdd131/week05/bom.html" target="_blank"><i class="bx bx-link-external"></i></a>
         </div>
-     </footer>
+      </div>
+    </div>
+  </section>
 
-     <!-- scroll reveal -->
-     <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- contact -->
+  <section class="contact" id="contact">
+    <h2 class="heading"> Contact <span>Me!</span></h2>
+    <form action="#">
+      <div class="input-box">
+        <input type="text" placeholder="Full Name" />
+        <input type="email" placeholder="Email Address" />
+      </div>
+      <div class="input-box">
+        <input type="number" placeholder="Phone Number" />
+        <input type="text" placeholder="Email Subject" />
+      </div>
+      <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
+      <input type="submit" value="Send Message" class="btn" />
+    </form>
+  </section>
 
-     <!-- typed js  -->
-     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p> Luis Fernando Galvez, <i class="fas fa-flower"></i> United States of America</p>
+      <p id="lastModified"></p>
+      <p>Copyright &copy; <span id="currentyear"></span> All Rights Reserved.</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+    </div>
+  </footer>
 
+  <!-- libs -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </body>
 </html>
