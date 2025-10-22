@@ -2,248 +2,230 @@
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
+if (menuIcon && navbar) {
+  menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
-};
+  };
+}
 
-/*================ scroll sections avtive link =================*/
+/*================ scroll sections active link & sticky =================*/
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+  sections.forEach((sec) => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 150;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
-        };
-    });
-    /*================== sticky navbar ==================*/
-    let header = document.querySelector('header');
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach((links) => links.classList.remove('active'));
+      const activeLink = document.querySelector(`header nav a[href*=${id}]`);
+      if (activeLink) activeLink.classList.add('active');
+    }
+  });
 
-    header.classList.toggle('sticky', window.scrollY > 100);
+  // sticky header
+  let header = document.querySelector('header');
+  if (header) header.classList.toggle('sticky', window.scrollY > 100);
 
-    /*================== remove toggle icon and navbar when click navbar link (scroll) ==================*/
+  // close mobile menu on scroll
+  if (menuIcon && navbar) {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
-
+  }
 };
 
-/*================== scroll reveal ==================*/
-ScrollReveal({ 
+/*================ scroll reveal =================*/
+if (typeof ScrollReveal !== 'undefined') {
+  ScrollReveal({
     reset: true,
     distance: '80px',
-    duration: 2000,
-    delay: 200
-});
+    duration: 1200,   // un poco más rápido
+    delay: 120        // un poco más rápido
+  });
 
-ScrollReveal().reveal('.home-content, .heading', { origin: 'top'});
-ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom'});
-ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left'});
-ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right'});
+  ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
+  ScrollReveal().reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+  ScrollReveal().reveal('.home-content h1, .about-img', { origin: 'left' });
+  ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
+}
 
-/*================== typed js ==================*/
-const typed = new Typed('.multiple-text', {
-    strings: ['Software Engineer', 'Web Developer'],
+/*================ typed js =================*/
+if (typeof Typed !== 'undefined') {
+  const typed = new Typed('.multiple-text', {
+    strings: ['Software Engineer', 'Web Developer', 'Software Test Engineer'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
-});
+  });
+}
 
-
-
+/*================ footer meta =================*/
 const year = new Date().getFullYear();
-document.getElementById("currentyear").textContent = year;
-
+const yearEl = document.getElementById('currentyear');
+if (yearEl) yearEl.textContent = year;
 
 const lastModified = document.lastModified;
-document.getElementById("lastModified").textContent = `Last Modification: ${lastModified}`;
+const lastModEl = document.getElementById('lastModified');
+if (lastModEl) lastModEl.textContent = `Last Modification: ${lastModified}`;
 
+/* ============================================================
+   CERTIFICATES & COURSES
+   ============================================================ */
 
-const courses = [
-    {
-        subject: 'CSE',
-        number: 110,
-        className: 'Introduction to Programming',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
-        technology: [
-            'Python'
-        ],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 130,
-        className: 'Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming. It is anticipated that students who complete this course will understand the fields of web design and development and will have a good idea if they want to pursue this degree as a major.',
-        technology: [
-            'HTML',
-            'CSS'
-        ],
-        completed: true
-    },
-    {
-        subject: 'CSE',
-        number: 111,
-        className: 'Programming with Functions',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'CSE 111 students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others; to write, call , debug, and test their own functions; and to handle errors within functions. CSE 111 students write programs with functions to solve problems in many disciplines, including business, physical science, human performance, and humanities.',
-        technology: [
-            'Python'
-        ],
-        completed: true
-    },
-    {
-        subject: 'CSE',
-        number: 210,
-        className: 'Programming with Classes',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
-        technology: [
-            'C#'
-        ],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 131,
-        className: 'Dynamic Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience in Web Fundamentals and programming. Students will learn to create dynamic websites that use JavaScript to respond to events, update content, and create responsive user experiences.',
-        technology: [
-            'HTML',
-            'CSS',
-            'JavaScript'
-        ],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 231,
-        className: 'Frontend Web Development I',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic API usage.',
-        technology: [
-            'HTML',
-            'CSS',
-            'JavaScript'
-        ],
-        completed: false
-    }
+/* ---------- 1) Data sets ---------- */
+
+// Web & Computer Programming (existing)
+const wcpCourses = [
+  { subject: 'CSE', number: 110, className: 'Introduction to Programming', credits: 2, certificate: 'WCP', description: 'Intro to programming fundamentals: variables, decisions, loops, arrays, I/O.', technology: ['Python'], completed: true },
+  { subject: 'WDD', number: 130, className: 'Web Fundamentals', credits: 2, certificate: 'WCP', description: 'Intro to web careers and basic site building.', technology: ['HTML','CSS'], completed: true },
+  { subject: 'CSE', number: 111, className: 'Programming with Functions', credits: 2, certificate: 'WCP', description: 'Functions: write, call, debug, test; handle errors.', technology: ['Python'], completed: true },
+  { subject: 'CSE', number: 210, className: 'Programming with Classes', credits: 2, certificate: 'WCP', description: 'OOP concepts: classes/objects, encapsulation, inheritance, polymorphism.', technology: ['C#'], completed: true },
+  { subject: 'WDD', number: 131, className: 'Dynamic Web Fundamentals', credits: 2, certificate: 'WCP', description: 'JS for events, dynamic content, responsive UX.', technology: ['HTML','CSS','JavaScript'], completed: true },
+  { subject: 'WDD', number: 231, className: 'Frontend Web Development I', credits: 2, certificate: 'WCP', description: 'UX, accessibility, performance, basic API usage.', technology: ['HTML','CSS','JavaScript'], completed: true }
 ];
 
+// Web Development Certificate (upper division)
+const wdCourses = [
+  { subject: 'CSE', number: 340, className: 'Web Backend Development', credits: 3, certificate: 'WD', description: 'Server-side, APIs, auth, data access.', technology: ['Backend','APIs'], completed: true },
+  { subject: 'CSE', number: 341, className: 'Web Services', credits: 3, certificate: 'WD', description: 'HTTP, REST, integration patterns.', technology: ['HTTP','REST'], completed: true },
+  { subject: 'WDD', number: 330, className: 'Web Frontend Development II', credits: 3, certificate: 'WD', description: 'Advanced frontend techniques.', technology: ['Frontend'], completed: true },
+  { subject: 'WDD', number: 430, className: 'Web Full-Stack Development', credits: 3, certificate: 'WD', description: 'Full-stack integration and deployment.', technology: ['Full-Stack'], completed: true }
+];
 
-// Function to create each class card
-function createClassCard(course) {
-    const container = document.querySelector('.services-container');
+// Associate of Applied Science (Software Development)
+const aasCourses = [
+  ...wcpCourses,
+  { subject: 'CSE', number: 212, className: 'Programming with Data Structures', credits: 2, certificate: 'AAS', description: 'Lists, stacks, queues, trees, maps.', technology: ['Data Structures'], completed: true },
+  ...wdCourses,
+  { subject: 'WRIT', number: 101, className: 'Writing in Professional Contexts', credits: 3, certificate: 'AAS', area: 'GEN', description: 'Professional writing skills.', technology: [], completed: true },
+  { subject: 'BUS', number: 301, className: 'Advanced Writing in Professional Contexts', credits: 3, certificate: 'AAS', area: 'GEN', description: 'Advanced business communication.', technology: [], completed: true },
+  { subject: 'MATH', number: '108X', className: 'Math for the Real World', credits: 3, certificate: 'AAS', area: 'GEN', description: 'Quantitative reasoning.', technology: [], completed: true },
+  { subject: 'GS', number: 170, className: 'Career Development', credits: 1, certificate: 'AAS', area: 'GEN', description: 'Career planning and tools.', technology: [], completed: true }
+];
 
-    const figure = document.createElement('div');
-    figure.classList.add('services-box'); // Add a class for easier styling
+// Backwards compatibility with your previous code (uses `courses`)
+const courses = wcpCourses;
 
-    const subject = document.createElement('h3');
-    subject.textContent = `${course.subject} ${course.number}`;
-    figure.appendChild(subject);
+/* ---------- 2) Rendering helpers ---------- */
 
-    container.appendChild(figure);
+function createClassCard(course, containerSel = '.services-container') {
+  const container = document.querySelector(containerSel);
+  if (!container) return;
+
+  const card = document.createElement('div');
+  card.className = 'services-box';
+  card.innerHTML = `
+    <h3>${course.subject} ${course.number}</h3>
+    <p>${course.className}</p>
+    <p><strong>${course.credits}</strong> credits</p>
+  `;
+
+  card.addEventListener('click', () => displayCourseDetailsIn(containerSel, course));
+  container.appendChild(card);
 }
 
-// Function to display course details in modal
-function displayCourseDetails(course) {
-    const courseDetails = document.querySelector('dialog.course-details');
-    console.log(courseDetails); // Esto debería mostrar el elemento en la consola si existe
+function displayCourseDetailsIn(containerSel, course) {
+  let dialogSel = 'dialog.course-details';
+  if (containerSel.includes('wd-container')) dialogSel = 'dialog.wd-details';
+  if (containerSel.includes('aas-container')) dialogSel = 'dialog.aas-details';
 
-    if (!courseDetails) {
-        console.error('El elemento dialog.course-details no fue encontrado.');
-        return;
-    }    courseDetails.innerHTML = `
-        <button id="closeModal">❌</button>
-        <h1>${course.subject} ${course.number}</h1>
-        <h3>${course.className}</h3>
-        <p><strong>Credits:</strong> ${course.credits}</p>
-        <p><strong>Certificate:</strong> ${course.certificate}</p>
-        <p><strong>Description:</strong> ${course.description}</p>
-        <p><strong>Technology:</strong> ${course.technology.join(', ')}</p>
-    `;
+  const dlg = document.querySelector(dialogSel);
+  if (!dlg) return;
 
-    courseDetails.showModal();
+  dlg.innerHTML = `
+    <button id="closeModal">❌</button>
+    <h1>${course.subject} ${course.number}</h1>
+    <h3>${course.className}</h3>
+    <p><strong>Credits:</strong> ${course.credits}</p>
+    ${course.certificate ? `<p><strong>Certificate:</strong> ${course.certificate}</p>` : ''}
+    ${course.description ? `<p><strong>Description:</strong> ${course.description}</p>` : ''}
+    ${course.technology && course.technology.length ? `<p><strong>Technology:</strong> ${course.technology.join(', ')}</p>` : ''}
+  `;
+  dlg.showModal();
 
-    // Close modal when clicking the close button
-    document.getElementById('closeModal').addEventListener('click', () => {
-        courseDetails.close();
-    });
-
-    // Close modal when clicking outside of it
-    courseDetails.addEventListener('click', (e) => {
-        if (e.target === courseDetails) {
-            courseDetails.close();
-        }
-    });
+  dlg.querySelector('#closeModal').addEventListener('click', () => dlg.close());
+  const handleBackdrop = (e) => { if (e.target === dlg) dlg.close(); };
+  dlg.addEventListener('click', handleBackdrop, { once: true });
 }
 
-// Function to add event listeners to each class card after filtering
-function addCardClickEvents() {
-    const cards = document.querySelectorAll('.services-box');
-    cards.forEach(card => {
-        const courseId = card.querySelector('h3').textContent.split(' ')[1]; // Get course number
-        const course = courses.find(c => c.number == courseId);
-        if (course) {
-            card.addEventListener('click', () => displayCourseDetails(course));
-        }
-    });
+function renderCertificateSection(data, containerSel, creditSel) {
+  const container = document.querySelector(containerSel);
+  if (!container) return;
+  container.innerHTML = '';
+  data.forEach((c) => createClassCard(c, containerSel));
+  const total = data.reduce((t, c) => t + (Number(c.credits) || 0), 0);
+  const creditEl = document.querySelector(creditSel);
+  if (creditEl) creditEl.textContent = total;
 }
 
-function showTotalCredits() {
-    const totalCredits = courses.reduce((total, clase) => total + clase.credits, 0);
-    document.getElementById('creditCount').textContent = totalCredits;
-}
+const filtersMap = {
+  all: (arr) => arr,
+  cse: (arr) => arr.filter((c) => String(c.subject).toUpperCase().startsWith('CSE')),
+  wdd: (arr) => arr.filter((c) => String(c.subject).toUpperCase().startsWith('WDD')),
+  gen: (arr) => arr.filter((c) => (c.area || '').toUpperCase() === 'GEN')
+};
 
-showTotalCredits();
+function bindFilter(containerSel, filterContainerSel, creditSel, data) {
+  const filterBar = document.querySelector(filterContainerSel);
+  if (!filterBar) return;
 
-document.querySelector('.filter-classes').addEventListener('click', function(event) {
+  filterBar.addEventListener('click', (event) => {
     event.preventDefault();
+    if (event.target.tagName !== 'A') return;
 
-    if (event.target.tagName === 'A') {
-        const filter = event.target.textContent.toLowerCase();
-        const container = document.querySelector('.services-container');
-        container.innerHTML = ''; // Clear existing content
+    const key = event.target.textContent.trim().toLowerCase();
+    const result = (filtersMap[key] || filtersMap.all)(data);
 
-        let filteredClasses;
+    const container = document.querySelector(containerSel);
+    if (!container) return;
+    container.innerHTML = '';
+    result.forEach((c) => createClassCard(c, containerSel));
 
-        switch (filter) {
-            case 'all':
-                filteredClasses = courses;
-                break;
-            case 'cse':
-                filteredClasses = courses.filter(clases => clases.subject === 'CSE');
-                break;
-            case 'wdd':
-                filteredClasses = courses.filter(clases => clases.subject === 'WDD');
-                break;
-            default:
-                filteredClasses = courses;
-        }
+    const total = result.reduce((t, c) => t + (Number(c.credits) || 0), 0);
+    const creditEl = document.querySelector(creditSel);
+    if (creditEl) creditEl.textContent = total;
+  });
+}
 
-        filteredClasses.forEach(createClassCard);
-        addCardClickEvents(); // Reapply click events after filtering
-    }
-});
+/* ---------- 3) INITIAL RENDERING ---------- */
 
-// Initial card rendering and event binding
-courses.forEach(createClassCard);
-addCardClickEvents();
+// A) WCP
+renderCertificateSection(wcpCourses, '.services-container', '#creditCount');
+
+// Keep legacy filter bar for first section
+const firstFilterBar = document.querySelector('.filter-classes');
+if (firstFilterBar) {
+  firstFilterBar.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (event.target.tagName !== 'A') return;
+
+    const filter = event.target.textContent.toLowerCase();
+    const containerSel = '.services-container';
+    const container = document.querySelector(containerSel);
+    if (!container) return;
+    container.innerHTML = '';
+
+    let filtered = wcpCourses;
+    if (filter === 'cse') filtered = wcpCourses.filter((c) => c.subject === 'CSE');
+    if (filter === 'wdd') filtered = wcpCourses.filter((c) => c.subject === 'WDD');
+
+    filtered.forEach((c) => createClassCard(c, containerSel));
+
+    const total = filtered.reduce((t, c) => t + (Number(c.credits) || 0), 0);
+    const creditEl = document.getElementById('creditCount');
+    if (creditEl) creditEl.textContent = total;
+  });
+}
+
+// B) WD
+renderCertificateSection(wdCourses, '.wd-container', '#wdCreditCount');
+bindFilter('.wd-container', '.wd-filter', '#wdCreditCount', wdCourses);
+
+// C) AAS
+renderCertificateSection(aasCourses, '.aas-container', '#aasCreditCount');
+bindFilter('.aas-container', '.aas-filter', '#aasCreditCount', aasCourses);
